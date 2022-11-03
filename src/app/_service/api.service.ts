@@ -5,18 +5,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-    // search
+  constructor(private httpClient: HttpClient) { }
+    // search a cocktail by name
+    searchCocktailByName(name: string) {
+      return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + name)
+    }
+    // search a cocktail by first letter
+    searchCocktailByFirstLetter(firstLetter: string) {
+      return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' + firstLetter)
+    }
+    // search a cocktail randomly
+    searchCocktailRandomly() {
+      return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    }
+
     // lookup
     // list
     // filter
-    constructor(private httpClient: HttpClient) { }
-    searchCocktailByFirstLetter(firstLetter: string) {
-        return this.httpClient
-                        .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' + firstLetter)
-                        
-           
-    }
-    // searchByS
-
-
 }

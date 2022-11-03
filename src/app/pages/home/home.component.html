@@ -1,20 +1,40 @@
 <nav class="navbar bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand">The cocktail DB</a>
+    <a class="navbar-brand">Thh cocktail DB</a>
   </div>
 </nav>
 
-<h1>Top Drinks</h1>
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4 my-2"
+  <div class="col-sm-7 col-md-7 col-lg-4 my-2">
+    <div class="input-group">
+      <input [(ngModel)]="cocktail" id="search" type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary" (click)="search()">search</button> 
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2 flex-container no-wrap">
+    <div *ngFor="let letter of firstsLetters"
+          class="input-group"
+          role="button">
+      <button type="button" class="btn btn-outline-primary" (click)="searchByFirstLetter(letter)">{{ letter }}</button> 
+    </div>
+  </div>
+</div>
+
+
+<h1>Drinks</h1>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-3 my-2"
       *ngFor="let drink of drinks"
       role="button"
       [routerLink]="'/drink/' + drink.idDrink">
     <div class="card">
       <img [src]="drink.strDrinkThumb" class="card-img-top">
       <div class="card-body">
-        <h5 class="card-title">{{ drink.strDrink}}</h5>
-        
+        <h5 class="card-title">{{ drink.strDrink }}</h5>
         <div  class="btn btn-primary">Dettaglio</div>
       </div>
       <div class="card-footer">
