@@ -42,6 +42,10 @@ export class DrinkComponent implements OnInit {
           });
           console.log(this.drink);
         })
-
   }
+
+  reload(): void{
+    this.ngOnInit()
+  }
+
 }

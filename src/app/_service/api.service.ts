@@ -14,7 +14,7 @@ export class ApiService {
     searchCocktailByFirstLetter(firstLetter: string) {
       return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' + firstLetter)
     }
-    // search a cocktail randomly
+    // randomly cocktail
     searchCocktailRandomly() {
       return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     }

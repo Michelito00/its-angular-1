@@ -18,24 +18,13 @@ export class HomeComponent implements OnInit {
     this.searchRandomly();
   }
 
+  reload(): void{
+    this.ngOnInit()
+  }
+
   searchRandomly() {
     this.apiService.searchCocktailRandomly()
     .subscribe((response: any) => {
       this.drinks = response.drinks;
     })}
-
-  searchByFirstLetter(letter: string) {
-    this.apiService.searchCocktailByFirstLetter(letter)
-    .subscribe((response: any) => {
-      this.drinks = response.drinks;
-      this.drinks.sort((a, b) => a.strDrink.localeCompare(b.strDrink))
-    })}
-  
-  search(): void {
-    this.apiService.searchCocktailByName(this.cocktail)
-      .subscribe( (response: any) => {
-        console.log(response);
-        this.drinks = response.drinks;
-    })
-  }
 }

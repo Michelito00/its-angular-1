@@ -20,16 +20,30 @@
           <a class="nav-link" [routerLink]="'/order/'">Order</a>
         </li>
       </ul>
+      <form class="d-flex" role="search">
+        <input [(ngModel)]="cocktail" id="search" class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
+        <button class="btn btn-outline-primary" type="button" (click)="search()">search</button>
+      </form>
     </div>
   </div>
 </nav>
 
-<h2>Our Drinks</h2>
+
+<div class="row">
+  <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2 flex-container no-wrap">
+    <div *ngFor="let letter of firstsLetters"
+          class="input-group"
+          role="button">
+      <button type="button" class="btn btn-outline-primary" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
+    </div>
+  </div>
+</div>
+
+<h2>Drinks</h2>
 <div class="row">
   <div class="col-sm-12 col-md-6 col-lg-3 my-2"
       *ngFor="let drink of drinks">
     <div class="card">
-
       <img [src]="drink.strDrinkThumb" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{ drink.strDrink }}</h5>
@@ -41,6 +55,11 @@
       </div>
       <div class="card-footer">
         <small class="text-muted">{{ drink.strCategory }}</small>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+          </label>
+        </div>
       </div>
     </div>
   </div>
