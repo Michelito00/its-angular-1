@@ -6,10 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DrinkComponent } from './pages/drink/drink.component';
 import { OrderComponent } from './pages/order/order.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { CardComponent } from "./components/card/card.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { OrderComponent } from './pages/order/order.component';
     HomeComponent,
     DrinkComponent,
     OrderComponent,
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

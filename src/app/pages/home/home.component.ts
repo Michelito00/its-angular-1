@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/_service/api.service';
+import { CardComponent } from "src/app/components/card/card.component";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { ApiService } from 'src/app/_service/api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  drinks:any[] = [];
+  drinkss:any[] = [];
   cocktail:string = '';
   firstsLetters:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
   letter:string = '';
@@ -18,13 +19,16 @@ export class HomeComponent implements OnInit {
     this.searchRandomly();
   }
 
-  reload(): void{
-    this.ngOnInit()
-  }
-
   searchRandomly() {
     this.apiService.searchCocktailRandomly()
     .subscribe((response: any) => {
-      this.drinks = response.drinks;
-    })}
+      this.drinkss = response.drinks;
+  })}
+
+  searchByFirstLetter(letter: string) {
+    this.apiService.searchCocktailByFirstLetter(letter)
+    .subscribe((response: any) => {
+      this.drinkss = response.drinks;
+      this.drinkss.sort((a, b) => a.strDrink.localeCompare(b.strDrink))
+  })}
 }

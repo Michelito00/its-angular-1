@@ -1,47 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <div class="container-fluid">
-        <a class="navbar-brand"
-           role="button"
-           (click)="reload()"
-            >The cocktail DB</a>
-      </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="'/home/'">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/order/'">Order</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 
-<h2>Our Drinks</h2>
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-3 my-2"
-      *ngFor="let drink of drinks">
-    <div class="card">
-
-      <img [src]="drink.strDrinkThumb" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">{{ drink.strDrink }}</h5>
-        <div class="btn btn-primary"
-             role="button"
-             [routerLink]="'/drink/' + drink.idDrink">
-             Dettaglio
-        </div>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">{{ drink.strCategory }}</small>
-      </div>
+  <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2 flex-container no-wrap">
+    <div *ngFor="let letter of firstsLetters"
+          class="input-group"
+          role="button">
+      <button type="button" class="btn btn-outline-primary" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
     </div>
   </div>
 </div>
+
+<h2>Our Drinks</h2>
+
+<app-card [drinks]="drinkss"></app-card>
