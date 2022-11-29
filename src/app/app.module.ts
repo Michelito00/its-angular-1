@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DrinkComponent } from './pages/drink/drink.component';
 import { OrderComponent } from './pages/order/order.component';
+import { IngredientComponent } from "./pages/ingredient/ingredient.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { CardComponent } from "./components/card/card.component";
 
@@ -21,6 +22,7 @@ import { CardComponent } from "./components/card/card.component";
     HomeComponent,
     DrinkComponent,
     OrderComponent,
+    IngredientComponent,
     NavbarComponent,
     CardComponent
   ],

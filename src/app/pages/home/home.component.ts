@@ -8,7 +8,7 @@ import { CardComponent } from "src/app/components/card/card.component";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  drinkss:any[] = [];
+  drinks:any[] = [];
   cocktail:string = '';
   firstsLetters:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
   letter:string = '';
@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
   searchRandomly() {
     this.apiService.searchCocktailRandomly()
     .subscribe((response: any) => {
-      this.drinkss = response.drinks;
+      this.drinks = response.drinks;
   })}
 
   searchByFirstLetter(letter: string) {
     this.apiService.searchCocktailByFirstLetter(letter)
     .subscribe((response: any) => {
-      this.drinkss = response.drinks;
-      this.drinkss.sort((a, b) => a.strDrink.localeCompare(b.strDrink))
+      this.drinks = response.drinks;
+      this.drinks.sort((a, b) => a.strDrink.localeCompare(b.strDrink))
   })}
 }

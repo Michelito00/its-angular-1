@@ -18,6 +18,14 @@ export class ApiService {
     searchCocktailRandomly() {
       return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     }
+    // get an ingredient by name
+    getIngredient(ingredient: string): any {
+      return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?i=' + ingredient)
+    }
+    //
+    getDrinksByIngredient(ingredient: string) {
+      return this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredient);
+    }
 
     // lookup
     // list
