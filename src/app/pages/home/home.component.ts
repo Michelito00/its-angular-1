@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { ApiService } from 'src/app/_service/api.service';
 import { CardComponent } from "src/app/components/card/card.component";
 
@@ -9,9 +9,7 @@ import { CardComponent } from "src/app/components/card/card.component";
 })
 export class HomeComponent implements OnInit {
   drinks:any[] = [];
-  cocktail:string = '';
-  firstsLetters:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  letter:string = '';
+  alphabet:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
   constructor(private apiService: ApiService) {}
 

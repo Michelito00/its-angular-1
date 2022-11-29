@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/_service/api.service';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html'
+  selector: 'app-search',
+  templateUrl: './search.component.html'
 })
-export class OrderComponent implements OnInit {
+export class SearchComponent implements OnInit {
   drinkss:any[] = [];
   cocktail:string = '';
   firstsLetters:string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');

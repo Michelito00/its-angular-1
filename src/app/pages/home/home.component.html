@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2 flex-container no-wrap">
-    <div *ngFor="let letter of firstsLetters"
+    <div *ngFor="let letter of alphabet"
           class="input-group"
           role="button">
       <button type="button" class="btn btn-outline-primary" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
