@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Drink } from 'src/app/_models/drink.model';
-import { ApiService } from 'src/app/_service/api.service';
 
 @Component({
   selector: 'app-drink',

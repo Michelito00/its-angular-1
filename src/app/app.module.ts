@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { BlockUIModule } from 'ng-block-ui';
+import { BlockUIHttpModule } from 'ng-block-ui/http';
 
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,7 +33,9 @@ import { CardComponent } from "./components/card/card.component";
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BlockUIModule.forRoot(),
+    BlockUIHttpModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,10 +11,14 @@ export class IngredientComponent implements OnInit {
   ingredient: any = []
   drinks: any = []
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
+  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const ingredientName = this.route.snapshot.paramMap.get('ingredientName')!;
+    this.activatedRoute.data.subscribe(({ingredient}) => {
+      this.ingredient = this.ingredient;
+    })
+
+    const ingredientName = this.activatedRoute.snapshot.paramMap.get('ingredientName')!;
 
     this.apiService.getIngredient(ingredientName).subscribe((response: any) => {
       console.log(response)

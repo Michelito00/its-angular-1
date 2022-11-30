@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 
-<div class="row">
-  <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2 flex-container no-wrap">
+<div class="row mt-5 mb-5">
+  <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2">
     <div *ngFor="let letter of alphabet"
           class="input-group"
           role="button">
-      <button type="button" class="btn btn-outline-primary" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
+      <button type="button" class="btn btn-outline-dark" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
     </div>
   </div>
 </div>

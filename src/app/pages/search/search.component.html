@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 
-<form class="d-flex">
-  <input [(ngModel)]="cocktail" id="search" name="drinkName" class="form-control" type="text" placeholder="Search...">
-  <button class="btn btn-outline-primary" type="submit" (click)="search()">Search</button>
-</form>
+<div class="mt-5 mb-5 input-group">
+  <input [(ngModel)]="cocktail" id="search" name="drinkName" type="text" class="form-control rounded" placeholder="Search..." aria-label="Search" aria-describedby="search-addon" />
+  <button type="submit" class="btn btn-outline-dark" (click)="search()">Search</button>
+</div>
 
 <app-card [drinks]="drinkss"></app-card>
