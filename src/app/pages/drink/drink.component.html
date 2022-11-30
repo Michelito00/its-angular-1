@@ -20,23 +20,15 @@
       <h5 class="card-title">Ingredients</h5>
       <ul>
         <li *ngFor="let ingredient of drink.ingredients">
-<<<<<<< HEAD
           <a class="link-primary" [routerLink]="'/ingredient/' + ingredient.name" >{{ ingredient.name }}</a>: {{ ingredient.measure }}
-=======
-          <div class="btn btn-outline-primary" role="button" [routerLink]="'/ingredient/' + ingredient.name" >{{ ingredient.name }}</div>: {{ ingredient.measure }}
->>>>>>> 57204b5f1135e63d668386457ac62e5f16d97118
         </li>
       </ul>
-      <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Instructions</h5>
-
       <p class="card-text"> {{ drink.instructions.EN }} </p>
     </div>
   </div>
-
 </div>
