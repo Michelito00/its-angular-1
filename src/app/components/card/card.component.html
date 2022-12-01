@@ -1,14 +1,15 @@
-<div class="row">
+<div class="row" style="display: flex; justify-content: center;">
   <div class="col-sm-12 col-md-6 col-lg-3 my-2"
       *ngFor="let drink of drinks">
     <div class="card bg-dark text-white">
       <img [src]="drink.strDrinkThumb" class="card-img-top">
       <div class="card-body">
-        <h5 class="card-title">{{ drink.strDrink }}</h5>
-        <div class="btn btn-lg btn-block btn-light"
+        <h5 class="card-title text-center">{{ drink.strDrink }}</h5>
+        <div class="btn btn-light"
+             style="width: 100%; margin: auto;"
              role="button"
              [routerLink]="'/drink/' + drink.idDrink">
-             Dettaglio
+             Detail
         </div>
       </div>
       <div class="card-footer">
