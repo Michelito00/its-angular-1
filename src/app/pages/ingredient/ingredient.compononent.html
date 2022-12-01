@@ -1,24 +1,21 @@
 <app-navbar></app-navbar>
 
-<div class="card-group m-3">
-  <div class="card" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ ingredient.strIngredient }}</h5>
-        </div>
-        <div class="col-md-12">
-          <img [src]="'https://www.thecocktaildb.com/images/ingredients/' + ingredient.strIngredient + '.png'" class="img-fluid rounded-start">
-        </div>
+<div class="card-group mt-4">
+  <div class="card text-center bg-dark text-white border-0">
+    <div class="card-body">
+      <h4 class="card-title mb-4">{{ ingredient.strIngredient }}</h4>
+      <div class="col-md-8" style="width: 60%; margin: auto;">
+        <img [src]="'https://www.thecocktaildb.com/images/ingredients/' + ingredient.strIngredient + '.png'" class="img-fluid rounded">
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card bg-dark text-white border-0">
     <div class="card-body">
-      <h5 class="card-title">Description</h5>
+      <h4 class="card-title text-center mb-4">Description</h4>
       <p class="card-text"> {{ ingredient.strDescription }} </p>
     </div>
   </div>
 </div>
 
+<h2 class="text-center mt-5 mb-3"> {{drinks.length}} cocktails with this ingredient</h2>
 <app-card [drinks]="drinks"></app-card>
