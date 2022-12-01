@@ -16,3 +16,33 @@
 	font-size: 30px;
 	border-radius: .25rem;
   }
+
+  .wrapScroll {
+    white-space: nowrap;
+    overflow-x: auto;
+    border: 1px solid #212529;
+    background-color: #212529;
+    width: 95%;
+    margin: auto;
+  }
+
+
+@media only screen and (min-width: 600px) {
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dcdddd;
+}
+}
