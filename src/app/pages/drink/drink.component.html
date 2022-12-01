@@ -1,34 +1,30 @@
 <app-navbar></app-navbar>
 
-<div class="card-group m-3">
-  <div class="card" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img [src]="drink.strDrinkThumb" class="img-fluid rounded-start">
+<div class="card-group mt-4">
+  <div class="card text-center bg-dark text-white border-0">
+    <div class="card-body">
+      <h4 class="card-title">{{ drink.strDrink}} ({{ drink.strCategory }})</h4>
+      <div class="col-md-12">
+        <img [src]="drink.strDrinkThumb" class="img-fluid rounded">
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ drink.strDrink}} ({{ drink.strCategory }})</h5>
-          <p class="card-text">{{ drink.instructions['EN'] }}</p>
-          <p class="card-text"><small class="text-muted">Category: {{ drink.strCategory }}</small></p>
-        </div>
-      </div>
+      <p class="card-text"><small class="text-muted">Category: {{ drink.strCategory }}</small></p>
     </div>
   </div>
-  <div class="card">
+  <div class="card bg-dark text-white border-0">
     <div class="card-body">
-      <h5 class="card-title">Ingredients</h5>
-      <ul>
-        <li *ngFor="let ingredient of drink.ingredients">
-          <a class="link-primary" [routerLink]="'/ingredient/' + ingredient.name" >{{ ingredient.name }}</a>: {{ ingredient.measure }}
+      <h4 class="card-title text-center mb-4">Ingredients</h4>
+      <ul class="text-center list-group list-group-light list-group-small" style="width: 240px; margin: auto;">
+        <li *ngFor="let ingredient of drink.ingredients" class="mb-3 list-group-item">
+          <a class="link-secondary" [routerLink]="'/ingredient/' + ingredient.name" >{{ ingredient.name }}</a>: {{ ingredient.measure }}
         </li>
       </ul>
     </div>
   </div>
-  <div class="card">
+  <div class="card bg-dark text-white border-0">
     <div class="card-body">
-      <h5 class="card-title">Instructions</h5>
+      <h4 class="card-title text-center mb-4">Instructions</h4>
       <p class="card-text"> {{ drink.instructions.EN }} </p>
     </div>
   </div>
 </div>
+
