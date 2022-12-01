@@ -1,15 +1,17 @@
 <app-navbar></app-navbar>
 
 <div class="row mt-5 mb-5">
+  <div class="wrapScroll rounded">
   <div class="flex-container no-wrap col-sm-7 col-md-7 col-lg-4 my-2">
-    <div *ngFor="let letter of alphabet"
+    <div *ngFor="let letter of alphabet; let i = index;"
           class="input-group"
           role="button">
-      <button type="button" class="btn btn-outline-dark" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
+      <button type="button" class="btn btn-outline-light" (click)="searchByFirstLetter(letter)">{{ letter }}</button>
     </div>
+  </div>
   </div>
 </div>
 
-<h2>Our Drinks</h2>
+<h2 class="text-center mt-5 mb-3">{{drinks.length}} cocktails found</h2>
 
 <app-card [drinks]="drinks"></app-card>
